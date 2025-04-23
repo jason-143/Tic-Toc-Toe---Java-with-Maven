@@ -1,0 +1,97 @@
+-------------------------------------------------------------------------------
+Test set: com.mycompany.tic.toc.toe.TicTocToeClickHandlerTest
+-------------------------------------------------------------------------------
+Tests run: 11, Failures: 1, Errors: 10, Skipped: 0, Time elapsed: 0.181 s <<< FAILURE! -- in com.mycompany.tic.toc.toe.TicTocToeClickHandlerTest
+com.mycompany.tic.toc.toe.TicTocToeClickHandlerTest.testWB_vertical1 -- Time elapsed: 0.029 s <<< ERROR!
+java.lang.NullPointerException: Cannot load from object array because "lbl" is null
+	at com.mycompany.tic.toc.toe.TicTocToeClickHandler.WB_vertical1(TicTocToeClickHandler.java:171)
+	at com.mycompany.tic.toc.toe.TicTocToeClickHandlerTest.testWB_vertical1(TicTocToeClickHandlerTest.java:152)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+
+com.mycompany.tic.toc.toe.TicTocToeClickHandlerTest.testWB_vertical2 -- Time elapsed: 0.004 s <<< ERROR!
+java.lang.NullPointerException: Cannot load from object array because "lbl" is null
+	at com.mycompany.tic.toc.toe.TicTocToeClickHandler.WB_vertical2(TicTocToeClickHandler.java:191)
+	at com.mycompany.tic.toc.toe.TicTocToeClickHandlerTest.testWB_vertical2(TicTocToeClickHandlerTest.java:167)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+
+com.mycompany.tic.toc.toe.TicTocToeClickHandlerTest.testWB_vertical3 -- Time elapsed: 0.005 s <<< ERROR!
+java.lang.NullPointerException: Cannot load from object array because "lbl" is null
+	at com.mycompany.tic.toc.toe.TicTocToeClickHandler.WB_vertical3(TicTocToeClickHandler.java:211)
+	at com.mycompany.tic.toc.toe.TicTocToeClickHandlerTest.testWB_vertical3(TicTocToeClickHandlerTest.java:182)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+
+com.mycompany.tic.toc.toe.TicTocToeClickHandlerTest.testWB_horizontal1 -- Time elapsed: 0.004 s <<< ERROR!
+java.lang.NullPointerException: Cannot load from object array because "lbl" is null
+	at com.mycompany.tic.toc.toe.TicTocToeClickHandler.WB_horizontal1(TicTocToeClickHandler.java:111)
+	at com.mycompany.tic.toc.toe.TicTocToeClickHandlerTest.testWB_horizontal1(TicTocToeClickHandlerTest.java:107)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+
+com.mycompany.tic.toc.toe.TicTocToeClickHandlerTest.testWB_horizontal2 -- Time elapsed: 0.004 s <<< ERROR!
+java.lang.NullPointerException: Cannot load from object array because "lbl" is null
+	at com.mycompany.tic.toc.toe.TicTocToeClickHandler.WB_horizontal2(TicTocToeClickHandler.java:131)
+	at com.mycompany.tic.toc.toe.TicTocToeClickHandlerTest.testWB_horizontal2(TicTocToeClickHandlerTest.java:122)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+
+com.mycompany.tic.toc.toe.TicTocToeClickHandlerTest.testWB_horizontal3 -- Time elapsed: 0.004 s <<< ERROR!
+java.lang.NullPointerException: Cannot load from object array because "lbl" is null
+	at com.mycompany.tic.toc.toe.TicTocToeClickHandler.WB_horizontal3(TicTocToeClickHandler.java:151)
+	at com.mycompany.tic.toc.toe.TicTocToeClickHandlerTest.testWB_horizontal3(TicTocToeClickHandlerTest.java:137)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+
+com.mycompany.tic.toc.toe.TicTocToeClickHandlerTest.testWB_diagonalLeft -- Time elapsed: 0.002 s <<< ERROR!
+java.lang.NullPointerException: Cannot load from object array because "lbl" is null
+	at com.mycompany.tic.toc.toe.TicTocToeClickHandler.WB_diagonalLeft(TicTocToeClickHandler.java:231)
+	at com.mycompany.tic.toc.toe.TicTocToeClickHandlerTest.testWB_diagonalLeft(TicTocToeClickHandlerTest.java:197)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+
+com.mycompany.tic.toc.toe.TicTocToeClickHandlerTest.testWB_diagonalRight -- Time elapsed: 0.003 s <<< ERROR!
+java.lang.NullPointerException: Cannot load from object array because "lbl" is null
+	at com.mycompany.tic.toc.toe.TicTocToeClickHandler.WB_diagonalRight(TicTocToeClickHandler.java:251)
+	at com.mycompany.tic.toc.toe.TicTocToeClickHandlerTest.testWB_diagonalRight(TicTocToeClickHandlerTest.java:212)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+
+com.mycompany.tic.toc.toe.TicTocToeClickHandlerTest.testWB_Bot -- Time elapsed: 0.045 s <<< ERROR!
+java.lang.NullPointerException: Cannot load from object array because "com.mycompany.tic.toc.toe.TicTocToe.lbl" is null
+	at com.mycompany.tic.toc.toe.TicTocToeClickHandler.WB_Bot(TicTocToeClickHandler.java:101)
+	at com.mycompany.tic.toc.toe.TicTocToeClickHandlerTest.testWB_Bot(TicTocToeClickHandlerTest.java:92)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+
+com.mycompany.tic.toc.toe.TicTocToeClickHandlerTest.testGenerateRandomValue -- Time elapsed: 0.007 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <2> but was: <3>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:150)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:145)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:531)
+	at com.mycompany.tic.toc.toe.TicTocToeClickHandlerTest.testGenerateRandomValue(TicTocToeClickHandlerTest.java:65)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+
+com.mycompany.tic.toc.toe.TicTocToeClickHandlerTest.testIsGameOnlyStarted -- Time elapsed: 0.004 s <<< ERROR!
+java.lang.NullPointerException: Cannot read the array length because "<local1>" is null
+	at com.mycompany.tic.toc.toe.TicTocToeClickHandler.isGameOnlyStarted(TicTocToeClickHandler.java:80)
+	at com.mycompany.tic.toc.toe.TicTocToeClickHandlerTest.testIsGameOnlyStarted(TicTocToeClickHandlerTest.java:78)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+
