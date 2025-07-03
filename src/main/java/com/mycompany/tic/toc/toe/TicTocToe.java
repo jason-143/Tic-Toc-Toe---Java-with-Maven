@@ -12,6 +12,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.awt.Button;
 import java.io.FileInputStream;
+import java.io.InputStream;
 import java.util.Properties;
 import javax.swing.JLabel;
 import javax.swing.JToggleButton;
@@ -29,10 +30,19 @@ public class TicTocToe extends javax.swing.JFrame {
     public static Clip clip_draw;
     public Clip clip_click;
     public Clip clip_menu;
-    File draw = new File("D:\\Java\\Projects\\tic-toc-toe\\Tic-toc-toe\\src\\main\\resource\\sound\\draw.wav");
-    File click = new File("D:\\Java\\Projects\\tic-toc-toe\\Tic-toc-toe\\src\\main\\resource\\sound\\click.wav");
-    File win = new File("D:\\Java\\Projects\\tic-toc-toe\\Tic-toc-toe\\src\\main\\resource\\sound\\win.wav");
-    File menu = new File("D:\\Java\\Projects\\tic-toc-toe\\Tic-toc-toe\\src\\main\\resource\\sound\\menu.wav");
+    
+//  development path
+//    File draw = new File("D:\\Java\\Projects\\tic-toc-toe\\Tic-toc-toe\\src\\main\\resource\\sound\\draw.wav");
+//    File click = new File("D:\\Java\\Projects\\tic-toc-toe\\Tic-toc-toe\\src\\main\\resource\\sound\\click.wav");
+//    File win = new File("D:\\Java\\Projects\\tic-toc-toe\\Tic-toc-toe\\src\\main\\resource\\sound\\win.wav");
+//    File menu = new File("D:\\Java\\Projects\\tic-toc-toe\\Tic-toc-toe\\src\\main\\resource\\sound\\menu.wav");
+    
+//  build path
+    InputStream draw = getClass().getResourceAsStream("/sound/draw.wav");
+    InputStream click = getClass().getResourceAsStream("/sound/click.wav");
+    InputStream win = getClass().getResourceAsStream("/sound/win.wav");
+    InputStream menu = getClass().getResourceAsStream("/sound/menu.wav");
+
 
     //Bot reference
     public static Button btnplay1;
@@ -100,105 +110,104 @@ public class TicTocToe extends javax.swing.JFrame {
 //            }
 //        }
 //    }
-
     public void Sound_win() {
 
-        javax.sound.sampled.AudioInputStream audiostream = null;
-        try {
-            audiostream = AudioSystem.getAudioInputStream(win);
-        } catch (UnsupportedAudioFileException ex) {
-            Logger.getLogger(TicTocToe.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException ex) {
-            Logger.getLogger(TicTocToe.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        try {
-            clip_win = AudioSystem.getClip();
-        } catch (LineUnavailableException ex) {
-            Logger.getLogger(TicTocToe.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        try {
-            clip_win.open(audiostream);
-        } catch (LineUnavailableException ex) {
-            Logger.getLogger(TicTocToe.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException ex) {
-            Logger.getLogger(TicTocToe.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        clip_win.start();
+//        javax.sound.sampled.AudioInputStream audiostream = null;
+//        try {
+//            audiostream = AudioSystem.getAudioInputStream(win);
+//        } catch (UnsupportedAudioFileException ex) {
+//            Logger.getLogger(TicTocToe.class.getName()).log(Level.SEVERE, null, ex);
+//        } catch (IOException ex) {
+//            Logger.getLogger(TicTocToe.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+//        try {
+//            clip_win = AudioSystem.getClip();
+//        } catch (LineUnavailableException ex) {
+//            Logger.getLogger(TicTocToe.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+//        try {
+//            clip_win.open(audiostream);
+//        } catch (LineUnavailableException ex) {
+//            Logger.getLogger(TicTocToe.class.getName()).log(Level.SEVERE, null, ex);
+//        } catch (IOException ex) {
+//            Logger.getLogger(TicTocToe.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+//        clip_win.start();
     }
 
     public void Sound_draw() {
 
-        javax.sound.sampled.AudioInputStream audiostream = null;
-        try {
-            audiostream = AudioSystem.getAudioInputStream(draw);
-        } catch (UnsupportedAudioFileException ex) {
-            Logger.getLogger(TicTocToe.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException ex) {
-            Logger.getLogger(TicTocToe.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        try {
-            clip_draw = AudioSystem.getClip();
-        } catch (LineUnavailableException ex) {
-            Logger.getLogger(TicTocToe.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        try {
-            clip_draw.open(audiostream);
-        } catch (LineUnavailableException ex) {
-            Logger.getLogger(TicTocToe.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException ex) {
-            Logger.getLogger(TicTocToe.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        clip_draw.start();
+//        javax.sound.sampled.AudioInputStream audiostream = null;
+//        try {
+//            audiostream = AudioSystem.getAudioInputStream(draw);
+//        } catch (UnsupportedAudioFileException ex) {
+//            Logger.getLogger(TicTocToe.class.getName()).log(Level.SEVERE, null, ex);
+//        } catch (IOException ex) {
+//            Logger.getLogger(TicTocToe.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+//        try {
+//            clip_draw = AudioSystem.getClip();
+//        } catch (LineUnavailableException ex) {
+//            Logger.getLogger(TicTocToe.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+//        try {
+//            clip_draw.open(audiostream);
+//        } catch (LineUnavailableException ex) {
+//            Logger.getLogger(TicTocToe.class.getName()).log(Level.SEVERE, null, ex);
+//        } catch (IOException ex) {
+//            Logger.getLogger(TicTocToe.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+//        clip_draw.start();
     }
 
     public void Sound_menu() {
 
-        javax.sound.sampled.AudioInputStream audiostream = null;
-        try {
-            audiostream = AudioSystem.getAudioInputStream(menu);
-        } catch (UnsupportedAudioFileException ex) {
-            Logger.getLogger(TicTocToe.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException ex) {
-            Logger.getLogger(TicTocToe.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        try {
-            clip_menu = AudioSystem.getClip();
-        } catch (LineUnavailableException ex) {
-            Logger.getLogger(TicTocToe.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        try {
-            clip_menu.open(audiostream);
-        } catch (LineUnavailableException ex) {
-            Logger.getLogger(TicTocToe.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException ex) {
-            Logger.getLogger(TicTocToe.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        clip_menu.start();
+//        javax.sound.sampled.AudioInputStream audiostream = null;
+//        try {
+//            audiostream = AudioSystem.getAudioInputStream(menu);
+//        } catch (UnsupportedAudioFileException ex) {
+//            Logger.getLogger(TicTocToe.class.getName()).log(Level.SEVERE, null, ex);
+//        } catch (IOException ex) {
+//            Logger.getLogger(TicTocToe.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+//        try {
+//            clip_menu = AudioSystem.getClip();
+//        } catch (LineUnavailableException ex) {
+//            Logger.getLogger(TicTocToe.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+//        try {
+//            clip_menu.open(audiostream);
+//        } catch (LineUnavailableException ex) {
+//            Logger.getLogger(TicTocToe.class.getName()).log(Level.SEVERE, null, ex);
+//        } catch (IOException ex) {
+//            Logger.getLogger(TicTocToe.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+//        clip_menu.start();
     }
 
     public void Sound_click() {
 
-        javax.sound.sampled.AudioInputStream audiostream = null;
-        try {
-            audiostream = AudioSystem.getAudioInputStream(click);
-        } catch (UnsupportedAudioFileException ex) {
-            Logger.getLogger(TicTocToe.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException ex) {
-            Logger.getLogger(TicTocToe.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        try {
-            clip_click = AudioSystem.getClip();
-        } catch (LineUnavailableException ex) {
-            Logger.getLogger(TicTocToe.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        try {
-            clip_click.open(audiostream);
-        } catch (LineUnavailableException ex) {
-            Logger.getLogger(TicTocToe.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException ex) {
-            Logger.getLogger(TicTocToe.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        clip_click.start();
+//        javax.sound.sampled.AudioInputStream audiostream = null;
+//        try {
+//            audiostream = AudioSystem.getAudioInputStream(click);
+//        } catch (UnsupportedAudioFileException ex) {
+//            Logger.getLogger(TicTocToe.class.getName()).log(Level.SEVERE, null, ex);
+//        } catch (IOException ex) {
+//            Logger.getLogger(TicTocToe.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+//        try {
+//            clip_click = AudioSystem.getClip();
+//        } catch (LineUnavailableException ex) {
+//            Logger.getLogger(TicTocToe.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+//        try {
+//            clip_click.open(audiostream);
+//        } catch (LineUnavailableException ex) {
+//            Logger.getLogger(TicTocToe.class.getName()).log(Level.SEVERE, null, ex);
+//        } catch (IOException ex) {
+//            Logger.getLogger(TicTocToe.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+//        clip_click.start();
     }
 
 //    public int GameScore() {
@@ -211,6 +220,7 @@ public class TicTocToe extends javax.swing.JFrame {
 //            writer.write(json);
 //        }
 //    }
+    
     public void GameReset() {
         synchronized (this) {
             tbPlayer.setEnabled(true);
@@ -303,7 +313,7 @@ public class TicTocToe extends javax.swing.JFrame {
         tbPlayer.setEnabled(false);
         tbBot.setEnabled(false);
         isPlaying[0] = true;
-        gameLog.setText("[ index played: " + SelectedIndex + " ] [ move: " + lbl.getLabel() + " ]");
+        gameLog.setText("[ Index playable: " + TTTCH.dupSet + " ]");
     }
 
     public synchronized void isDraw() {

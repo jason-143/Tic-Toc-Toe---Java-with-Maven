@@ -41,8 +41,8 @@ public class TicTocToeClickHandler {
     File win = new File("D:\\Java\\Projects\\tic-toc-toe\\Tic-toc-toe\\src\\main\\resource\\sound\\win.wav");
 
     public Clip clip_win;
-    public int RscoreX = 0;
-    public int RscoreO = 0;
+    private int RscoreX = 0;
+    private int RscoreO = 0;
     public HashSet dupSet = new HashSet();
     public HashSet<Integer> BotSelectedIndex = new HashSet<>();
 
@@ -59,27 +59,27 @@ public class TicTocToeClickHandler {
      */
     public void Sound_win() {
 
-        javax.sound.sampled.AudioInputStream audiostream = null;
-        try {
-            audiostream = AudioSystem.getAudioInputStream(win);
-        } catch (UnsupportedAudioFileException ex) {
-            Logger.getLogger(TicTocToe.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException ex) {
-            Logger.getLogger(TicTocToe.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        try {
-            clip_win = AudioSystem.getClip();
-        } catch (LineUnavailableException ex) {
-            Logger.getLogger(TicTocToe.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        try {
-            clip_win.open(audiostream);
-        } catch (LineUnavailableException ex) {
-            Logger.getLogger(TicTocToe.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException ex) {
-            Logger.getLogger(TicTocToe.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        clip_win.start();
+//        javax.sound.sampled.AudioInputStream audiostream = null;
+//        try {
+//            audiostream = AudioSystem.getAudioInputStream(win);
+//        } catch (UnsupportedAudioFileException ex) {
+//            Logger.getLogger(TicTocToe.class.getName()).log(Level.SEVERE, null, ex);
+//        } catch (IOException ex) {
+//            Logger.getLogger(TicTocToe.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+//        try {
+//            clip_win = AudioSystem.getClip();
+//        } catch (LineUnavailableException ex) {
+//            Logger.getLogger(TicTocToe.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+//        try {
+//            clip_win.open(audiostream);
+//        } catch (LineUnavailableException ex) {
+//            Logger.getLogger(TicTocToe.class.getName()).log(Level.SEVERE, null, ex);
+//        } catch (IOException ex) {
+//            Logger.getLogger(TicTocToe.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+//        clip_win.start();
     }
 
     public synchronized void winNotif() {
@@ -103,7 +103,7 @@ public class TicTocToeClickHandler {
         
             dupSet - hashset from TicTocToeClickHandler class
             SelectedIndex - hashset from main class
-            BotSelectedIndex - hashset from TicTocToeClickHandler class
+            BotSelectedIndex - hashset from TicTocToeClickHandler class fro bot
         
         1.   isClick indexes must be add all to hashset(dupSet)
         2.   implement a new hashset(SelectedIndex) to insert the index of label for each player click in L(n) event
@@ -115,13 +115,14 @@ public class TicTocToeClickHandler {
         for (int i = 0; i < isClick.length; i++) {
             dupSet.add(i);
         }
+
         // Remove indices already clicked
         dupSet.removeAll(SelectedIndex);
+
         // Convert HashSet to List
         List<Integer> dupList = new ArrayList<>(dupSet);
         dup_container = dupList.get(random.nextInt(dupList.size()));
-//        dup_container = random.nextInt(dupSet.size());
-        System.out.println("dupList Size " + dupList.size() + " dupList index: " + dupList);
+//        System.out.println("dupList Size " + dupList.size() + " dupList index: " + dupList);
         return dup_container;
     }
 
@@ -163,17 +164,22 @@ public class TicTocToeClickHandler {
         }
     }
 
-    public synchronized boolean WB_Bot() {
+    public boolean WB_Bot() {
         // add first the random index before it set to the Label text to avoid merging the bot index from use click index.
         // testing phase.
         // implement unit test. (on progress)
+        // Remove indices already clicked
+        dupSet.removeAll(SelectedIndex);
 
         int randomIndex = generateRandomValue();
         //insert random generated index for bot to be remove from dupSet
         BotSelectedIndex.add(randomIndex);
+
         //remove from dupSet after inserting
-        dupSet.removeAll(BotSelectedIndex);
+//        dupSet.remove(randomIndex);
         if (dupSet.size() > 0) {
+            //remove random indices from BotSelectedIndex
+            dupSet.removeAll(BotSelectedIndex);
             if ("X".equals(moveCounter)) {
                 lbl[randomIndex].setLabel("O");
                 isClick[randomIndex] = true;
@@ -185,12 +191,11 @@ public class TicTocToeClickHandler {
             }
 //            System.out.println("index playable: " + dupSet);
 //            System.out.println("bot index - " + BotSelectedIndex);
-            log.setText("[ rand: " + randomIndex + " ] [ usr: " + SelectedIndex + " ] index playable: " + dupSet + " " + lbl);
+//            log.setText("index playable: " + dupSet + " " + lbl);
 //            System.out.println("dupSet Size " + dupSet.size());
             return true;
         }
         TicTocToe.disabled_board();
-        System.out.println("No more move");
         winCondition();
         return false;
     }
@@ -340,7 +345,6 @@ public class TicTocToeClickHandler {
         String label_pattern[] = {lbl[0].getLabel(), lbl[1].getLabel(), lbl[2].getLabel(),
             lbl[3].getLabel(), lbl[4].getLabel(), lbl[5].getLabel(),
             lbl[6].getLabel(), lbl[7].getLabel(), lbl[8].getLabel()};
-
         if (!label_pattern[2].isEmpty() && label_pattern[2].equals(label_pattern[4]) && label_pattern[4].equals(label_pattern[6])) {
             if ("X".equals(label_pattern[2])) {
                 RscoreX = RscoreX + 1;
