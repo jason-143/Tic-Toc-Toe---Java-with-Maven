@@ -1,3 +1,4 @@
-A Simple Java Tic-Toc-Toe games for desktop
-- has two mode:
-> player vs player / player vs bot
+#Tic-Toc-Toe
+##A Simple Java games for desktop
+**has two mode:**
+- *player vs player/bot*
